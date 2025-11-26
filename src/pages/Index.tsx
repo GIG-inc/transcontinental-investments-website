@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.png";
+import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
@@ -22,11 +22,7 @@ const Index = () => {
       <section className="flex-1 flex items-center justify-center px-4">
         <div className="text-center animate-fade-in-up max-w-4xl mx-auto">
           <div className="mb-8 md:mb-10 flex justify-center">
-            <img 
-              src={logo} 
-              alt="Transcontinental Investments - Precious metals trading and mineral investment company based in East Africa" 
-              className="h-auto w-full max-w-xs md:max-w-md"
-            />
+            <Logo className="h-auto w-full max-w-md md:max-w-2xl" />
           </div>
           <h1 className="font-display text-2xl md:text-3xl lg:text-4xl font-light tracking-wider text-foreground mb-4 md:mb-6">
             COMING SOON
