@@ -1,0 +1,36 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Company: Transcontinental Investments
+    Location: East Africa
+    Contact: info [at] transcontinentalinvestments.com
+    Twitter: @T_C_Investments
+    Instagram: @transcontinental_investments
+    Facebook: /transcontinentalinvestments
+    LinkedIn: /company/transcontinentalinvestments
+
+# THANKS
+
+    To all our partners, investors, miners, refiners, and stakeholders 
+    who make our mission possible.
+
+# TECHNOLOGY COLOPHON
+
+    Standards: HTML5, CSS3, JavaScript
+    Components: React, TypeScript
+    Build Tools: Vite
+    CSS Framework: Tailwind CSS
+    Fonts: Montserrat, Inter
+    IDE: Visual Studio Code
+    Built with: Lovable.dev
+    
+# SITE
+
+    Last update: 2025/11/27
+    Languages: English
+    Doctype: HTML5
+    Primary focus: Precious metals trading, mineral investment platform
+    Region: East Africa (Kenya, Uganda, Tanzania, Rwanda)
+    Standards: W3C compliant, WCAG 2.1 AA accessible
