@@ -16,8 +16,8 @@ const Waitlist = () => {
             </Button>
           </Link>
           <Link to="/about">
-            <Button variant="outline" size="default" aria-label="Learn more about Transcontinental Investments">
-              Learn More
+            <Button variant="default" size="sm" aria-label="Learn more about Transcontinental Investments">
+              About
             </Button>
           </Link>
         </div>

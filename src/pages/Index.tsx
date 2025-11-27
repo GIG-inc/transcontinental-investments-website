@@ -16,7 +16,7 @@ const Index = () => {
               Blog
             </Link>
             <Link to="/waitlist">
-              <Button variant="outline" size="sm" aria-label="Join the waitlist">
+              <Button variant="default" size="sm" aria-label="Join the waitlist">
                 Join Waitlist
               </Button>
             </Link>
