@@ -1,0 +1,10 @@
+Contact: mailto:security@transcontinentalinvestments.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://transcontinentalinvestments.com/.well-known/security.txt
+Policy: https://transcontinentalinvestments.com/security-policy
+Acknowledgments: https://transcontinentalinvestments.com/security-acknowledgments
+
+# Security Disclosure Policy
+# If you discover a security vulnerability, please report it to us at security@transcontinentalinvestments.com
+# We take all security reports seriously and will respond within 48 hours.

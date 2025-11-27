@@ -8,11 +8,19 @@ const Index = () => {
       <header className="absolute top-0 left-0 right-0 z-10 px-4 py-4 md:py-6">
         <div className="container mx-auto flex items-center justify-between">
           <div className="opacity-0 pointer-events-none">Spacer</div>
-          <Link to="/about">
-            <Button variant="outline" size="sm" aria-label="Learn more about Transcontinental Investments">
-              Learn More
-            </Button>
-          </Link>
+          <div className="flex items-center gap-4 md:gap-6">
+            <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              About
+            </Link>
+            <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Blog
+            </Link>
+            <Link to="/waitlist">
+              <Button variant="outline" size="sm" aria-label="Join the waitlist">
+                Join Waitlist
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 
