@@ -12,7 +12,7 @@ const About = () => {
             <ArrowLeft size={20} />
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
-          <Link to="/#waitlist">
+          <Link to="/waitlist">
             <Button variant="default" size="sm">Join Waitlist</Button>
           </Link>
         </div>
@@ -157,7 +157,7 @@ const About = () => {
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Platform launching early 2026 — secure your spot to access mineral markets with confidence and transparency.
           </p>
-          <Link to="/#waitlist">
+          <Link to="/waitlist">
             <Button variant="default" size="lg" className="text-base">
               Join the Waitlist Today
             </Button>
