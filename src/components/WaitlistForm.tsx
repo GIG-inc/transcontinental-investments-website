@@ -13,7 +13,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, AlertCircle } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const waitlistSchema = z.object({
   fullName: z.string().trim().min(2, { message: "Full name must be at least 2 characters" }).max(100),
@@ -26,6 +27,8 @@ type WaitlistFormData = z.infer<typeof waitlistSchema>;
 
 export const WaitlistForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const { toast } = useToast();
 
   const form = useForm<WaitlistFormData>({
     resolver: zodResolver(waitlistSchema),
@@ -37,18 +40,47 @@ export const WaitlistForm = () => {
     },
   });
 
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZ3Aucc4Di9RgSpchofWiI0rE10x6U1W5-J8xqJY6p9m4HNUOGehEXnnE3aZLf-RlD/exec";
+
   const onSubmit = async (data: WaitlistFormData) => {
-    // Here you would integrate with your backend/email service
-    console.log("Waitlist submission:", data);
+    setError(null);
     
-    // Simulate submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitted(true);
-    form.reset();
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Google Apps Script requires no-cors mode
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: data.fullName,
+          email: data.email,
+          phone: data.phone || "",
+          message: data.message || "",
+        }),
+      });
+
+      // With no-cors mode, we can't read the response, so we assume success
+      setIsSubmitted(true);
+      form.reset();
+      
+      toast({
+        title: "Successfully joined the waitlist!",
+        description: "Please check your email for confirmation.",
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error("Waitlist submission error:", err);
+      setError("Failed to submit. Please try again or contact us directly.");
+      
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact waitlist@transcontinentalinvestments.com",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {
@@ -75,6 +107,13 @@ export const WaitlistForm = () => {
           Join the Waitlist
         </h3>
       </div>
+
+      {error && (
+        <div className="mb-4 p-4 bg-destructive/10 border border-destructive/50 rounded-md flex items-start gap-2">
+          <AlertCircle className="text-destructive flex-shrink-0 mt-0.5" size={20} />
+          <p className="text-sm text-destructive">{error}</p>
+        </div>
+      )}
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
