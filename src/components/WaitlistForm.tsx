@@ -40,7 +40,7 @@ export const WaitlistForm = () => {
     },
   });
 
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZ3Aucc4Di9RgSpchofWiI0rE10x6U1W5-J8xqJY6p9m4HNUOGehEXnnE3aZLf-RlD/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzJ0E8gk3exCMmf1vYoTeMC5HGDBxLXix2DWZH28py8d1OSlfm2ptrDWs-v_FwLpGN-/exec";
 
   const onSubmit = async (data: WaitlistFormData) => {
     setError(null);
