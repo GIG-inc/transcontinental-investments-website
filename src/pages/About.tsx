@@ -1,8 +1,53 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowLeft, TrendingUp, Globe, Users, Leaf, Target } from "lucide-react";
+import { useEffect } from "react";
 
 const About = () => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What minerals do you trade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We specialize in precious metals including gold, silver, and platinum, as well as rare earth elements and construction minerals. Our portfolio continues to expand based on market demand and opportunities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When will the investment platform launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our innovative investment platform is scheduled to launch in early 2026. Join our waitlist to receive exclusive updates and early access opportunities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you ensure ethical sourcing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We partner exclusively with certified suppliers who meet international standards for responsible mining. Our supply chain includes comprehensive verification and traceability measures."
+        }
+      }
+    ]
+  };
+
+  useEffect(() => {
+    // Add FAQ schema to the page
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+
+    // Cleanup on unmount
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header Navigation */}
