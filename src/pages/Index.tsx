@@ -4,25 +4,63 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Linkedin, ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Building2, Briefcase, Landmark, Globe } from "lucide-react";
 const Index = () => {
-  const products = [
-    { icon: ShoppingCart, title: "Gold Buying", link: "/products/gold-buying" },
-    { icon: Store, title: "Gold Selling", link: "/products/gold-selling" },
-    { icon: TrendingUp, title: "Investment Platform", link: "/products/investment-platform", badge: "2026" },
-    { icon: Handshake, title: "Mining Partnerships", link: "/products/mining-partnerships" },
-    { icon: Users, title: "Merchant Platform", link: "/products/merchant-platform", badge: "2026" },
-    { icon: Factory, title: "Refinery", link: "/products/refinery", badge: "2027" },
-    { icon: Lightbulb, title: "Innovation Hub", link: "/products/innovation-hub" },
-  ];
-
-  const audiences = [
-    { icon: Users, title: "Individual Sellers", desc: "Sell your gold with transparent pricing" },
-    { icon: Briefcase, title: "Local Gold Traders", desc: "Partner with us for reliable transactions" },
-    { icon: Building2, title: "Mining Companies", desc: "Scale operations with our support" },
-    { icon: Users, title: "Cooperative Groups", desc: "Fair pricing for community miners" },
-    { icon: Landmark, title: "Financial Institutions", desc: "Secure precious metals supply" },
-    { icon: Globe, title: "International Buyers", desc: "Source premium gold from East Africa" },
-  ];
-
+  const products = [{
+    icon: ShoppingCart,
+    title: "Gold Buying",
+    link: "/products/gold-buying"
+  }, {
+    icon: Store,
+    title: "Gold Selling",
+    link: "/products/gold-selling"
+  }, {
+    icon: TrendingUp,
+    title: "Investment Platform",
+    link: "/products/investment-platform",
+    badge: "2026"
+  }, {
+    icon: Handshake,
+    title: "Mining Partnerships",
+    link: "/products/mining-partnerships"
+  }, {
+    icon: Users,
+    title: "Merchant Platform",
+    link: "/products/merchant-platform",
+    badge: "2026"
+  }, {
+    icon: Factory,
+    title: "Refinery",
+    link: "/products/refinery",
+    badge: "2027"
+  }, {
+    icon: Lightbulb,
+    title: "Innovation Hub",
+    link: "/products/innovation-hub"
+  }];
+  const audiences = [{
+    icon: Users,
+    title: "Individual Sellers",
+    desc: "Sell your gold with transparent pricing"
+  }, {
+    icon: Briefcase,
+    title: "Local Gold Traders",
+    desc: "Partner with us for reliable transactions"
+  }, {
+    icon: Building2,
+    title: "Mining Companies",
+    desc: "Scale operations with our support"
+  }, {
+    icon: Users,
+    title: "Cooperative Groups",
+    desc: "Fair pricing for community miners"
+  }, {
+    icon: Landmark,
+    title: "Financial Institutions",
+    desc: "Secure precious metals supply"
+  }, {
+    icon: Globe,
+    title: "International Buyers",
+    desc: "Source premium gold from East Africa"
+  }];
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Navigation */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50">
@@ -55,7 +93,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-32 px-4">
+      <section className="py-20 px-4 md:py-0">
         <div className="container mx-auto">
           <div className="text-center animate-fade-in-up max-w-5xl mx-auto">
             <div className="mb-8 md:mb-12 flex justify-center">
@@ -121,18 +159,15 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {products.map((product, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow group">
+            {products.map((product, index) => <Card key={index} className="hover:shadow-lg transition-shadow group">
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-3 rounded-lg bg-secondary/50 group-hover:bg-secondary transition-colors">
                       <product.icon className="h-6 w-6 text-foreground" />
                     </div>
-                    {product.badge && (
-                      <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
+                    {product.badge && <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
                         {product.badge}
-                      </span>
-                    )}
+                      </span>}
                   </div>
                   <CardTitle className="text-xl">{product.title}</CardTitle>
                 </CardHeader>
@@ -143,8 +178,7 @@ const Index = () => {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           <div className="text-center">
@@ -170,8 +204,7 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {audiences.map((audience, index) => (
-              <div key={index} className="p-6 bg-background border border-border rounded-lg hover:shadow-md transition-shadow">
+            {audiences.map((audience, index) => <div key={index} className="p-6 bg-background border border-border rounded-lg hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-secondary/50">
                     <audience.icon className="h-5 w-5 text-foreground" />
@@ -181,8 +214,7 @@ const Index = () => {
                     <p className="text-sm text-muted-foreground">{audience.desc}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           <div className="text-center mt-12">
