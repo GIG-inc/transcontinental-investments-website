@@ -7,16 +7,17 @@ const Merchants = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
+      <header className="px-4 py-4 sm:py-6 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Home
+            <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Home</span>
+              <span className="sm:hidden">Back</span>
             </Button>
           </Link>
           <Link to="/about">
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
               About
             </Button>
           </Link>
@@ -24,30 +25,30 @@ const Merchants = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-12 sm:py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-            <span className="text-sm font-medium text-foreground">Coming Early 2026</span>
+          <div className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full">
+            <span className="text-xs sm:text-sm font-medium text-foreground">Coming Early 2026</span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
             Become a Merchant
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
             Join our exclusive merchant platform to buy gold from us or sell gold to us. Connect directly with Transcontinental Investments for seamless, secure transactions.
           </p>
         </div>
       </section>
 
       {/* What is the Merchant Platform */}
-      <section className="py-12 px-4 bg-secondary/20">
+      <section className="py-10 sm:py-12 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8 text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 sm:mb-8 text-center px-2">
             What is the Merchant Platform?
           </h2>
-          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+          <p className="text-base sm:text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
             Our merchant platform is a specialized marketplace designed for verified buyers and sellers to trade gold directly with Transcontinental Investments. Whether you want to purchase gold from us or sell gold to us, the platform provides:
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="p-6 border border-border rounded-lg bg-background">
               <h3 className="font-medium text-foreground mb-3 text-xl">For Gold Buyers</h3>
               <ul className="space-y-2 text-muted-foreground">
@@ -95,13 +96,13 @@ const Merchants = () => {
       </section>
 
       {/* Merchant Application Form */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-8">
-            <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-3 sm:mb-4 px-2">
               Apply to Become a Merchant
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
               Fill out the form below to register your interest. We'll contact you when the platform launches in early 2026.
             </p>
           </div>

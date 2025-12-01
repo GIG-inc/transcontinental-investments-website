@@ -6,16 +6,17 @@ const MiningPartnerships = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
+      <header className="px-4 py-4 sm:py-6 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
+            <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Products</span>
+              <span className="sm:hidden">Back</span>
             </Button>
           </Link>
           <Link to="/waitlist">
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
               Join Waitlist
             </Button>
           </Link>
@@ -23,24 +24,24 @@ const MiningPartnerships = () => {
       </header>
 
       {/* Hero */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-12 sm:py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
             Mining Partnerships
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-2">
             We partner with miners across East Africa to help them obtain necessary licenses, access equipment, and scale their operations sustainably.
           </p>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-12 px-4 bg-secondary/20">
+      <section className="py-10 sm:py-12 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-12 text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8 sm:mb-12 text-center px-2">
             How We Support Miners
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="flex flex-col items-center text-center p-6">
               <div className="p-4 rounded-lg bg-secondary mb-4">
                 <FileCheck className="h-8 w-8 text-foreground" />
@@ -82,12 +83,12 @@ const MiningPartnerships = () => {
       </section>
 
       {/* Partnership Benefits */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 sm:mb-8 px-2">
             Partnership Benefits
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <div className="border-l-4 border-primary pl-6">
               <h3 className="font-medium text-foreground mb-2">Legal Compliance</h3>
               <p className="text-muted-foreground">Navigate the regulatory landscape with expert guidance and support.</p>

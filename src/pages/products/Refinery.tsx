@@ -6,16 +6,17 @@ const Refinery = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
+      <header className="px-4 py-4 sm:py-6 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
+            <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Products</span>
+              <span className="sm:hidden">Back</span>
             </Button>
           </Link>
           <Link to="/waitlist">
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
               Join Waitlist
             </Button>
           </Link>
@@ -23,30 +24,30 @@ const Refinery = () => {
       </header>
 
       {/* Hero */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-12 sm:py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-            <span className="text-sm font-medium text-foreground">Development Late 2026 • Operations Early 2027</span>
+          <div className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full">
+            <span className="text-[10px] sm:text-xs md:text-sm font-medium text-foreground">Development Late 2026 • Operations Early 2027</span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
             Refinery Facility
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-2">
             A state-of-the-art precious metals refinery facility. Bringing world-class refining capabilities to East Africa with sustainable practices.
           </p>
         </div>
       </section>
 
       {/* Vision */}
-      <section className="py-12 px-4 bg-secondary/20">
+      <section className="py-10 sm:py-12 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8 text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 sm:mb-8 text-center px-2">
             Our Vision
           </h2>
-          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+          <p className="text-base sm:text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
             To establish East Africa's premier refining facility, creating a complete value chain from mining to refined products, supporting local economies and international standards.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="flex flex-col items-center text-center p-6">
               <div className="p-4 rounded-lg bg-secondary mb-4">
                 <Factory className="h-8 w-8 text-foreground" />
@@ -88,12 +89,12 @@ const Refinery = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 sm:mb-8 px-2">
             Development Timeline
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <div className="border-l-4 border-primary pl-6">
               <h3 className="font-medium text-foreground mb-2">Late 2026 - Development Phase</h3>
               <p className="text-muted-foreground">Site preparation, construction, and equipment installation begins.</p>
