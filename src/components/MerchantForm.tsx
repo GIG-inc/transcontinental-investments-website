@@ -73,9 +73,9 @@ export function MerchantForm() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-card border border-border rounded-lg p-6 md:p-8">
+    <div className="w-full max-w-2xl mx-auto bg-card border border-border rounded-lg p-4 sm:p-6 md:p-8">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
           <FormField
             control={form.control}
             name="fullName"

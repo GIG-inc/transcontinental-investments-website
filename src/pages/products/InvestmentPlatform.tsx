@@ -6,16 +6,17 @@ const InvestmentPlatform = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
+      <header className="px-4 py-4 sm:py-6 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
+            <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Products</span>
+              <span className="sm:hidden">Back</span>
             </Button>
           </Link>
           <Link to="/waitlist">
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
               Join Waitlist
             </Button>
           </Link>
@@ -23,27 +24,27 @@ const InvestmentPlatform = () => {
       </header>
 
       {/* Hero */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-12 sm:py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-            <span className="text-sm font-medium text-foreground">Coming Early 2026</span>
+          <div className="inline-block mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full">
+            <span className="text-xs sm:text-sm font-medium text-foreground">Coming Early 2026</span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
             Investment Platform
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-2">
             A comprehensive digital platform for investing in precious metals and mineral markets across East Africa. Democratizing access to mineral investments.
           </p>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-12 px-4 bg-secondary/20">
+      <section className="py-10 sm:py-12 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-12 text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8 sm:mb-12 text-center px-2">
             Platform Features
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="flex flex-col items-center text-center p-6">
               <div className="p-4 rounded-lg bg-secondary mb-4">
                 <TrendingUp className="h-8 w-8 text-foreground" />
@@ -85,12 +86,12 @@ const InvestmentPlatform = () => {
       </section>
 
       {/* What You Can Invest In */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 sm:mb-8 px-2">
             Investment Opportunities
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div className="p-6 border border-border rounded-lg">
               <h3 className="font-medium text-foreground mb-2">Physical Gold & Precious Metals</h3>
               <p className="text-muted-foreground">Own physical gold stored securely in our vaults with full liquidity options.</p>

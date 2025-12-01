@@ -6,16 +6,17 @@ const InnovationHub = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
+      <header className="px-4 py-4 sm:py-6 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
+            <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Products</span>
+              <span className="sm:hidden">Back</span>
             </Button>
           </Link>
           <Link to="/waitlist">
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
               Join Waitlist
             </Button>
           </Link>
@@ -23,24 +24,24 @@ const InnovationHub = () => {
       </header>
 
       {/* Hero */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-12 sm:py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
             Innovation Hub
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-2">
             A center for innovation and research in mining technology. We're pioneering the future of mining through collaboration, technology, and sustainable practices.
           </p>
         </div>
       </section>
 
       {/* Vision */}
-      <section className="py-12 px-4 bg-secondary/20">
+      <section className="py-10 sm:py-12 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-8 text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 sm:mb-8 text-center px-2">
             Innovation Focus Areas
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="flex flex-col items-center text-center p-6">
               <div className="p-4 rounded-lg bg-secondary mb-4">
                 <Cpu className="h-8 w-8 text-foreground" />
@@ -82,16 +83,16 @@ const InnovationHub = () => {
       </section>
 
       {/* Robotics Initiative */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 sm:mb-6 px-2">
             Mining Robotics Initiative
           </h2>
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-8">
-            <p className="text-lg text-muted-foreground mb-6">
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 sm:p-6 md:p-8">
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
               We are in talks to develop cutting-edge robotics solutions for the mining industry. This initiative aims to:
             </p>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-muted-foreground">Improve worker safety by automating dangerous tasks</p>
