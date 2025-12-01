@@ -85,12 +85,12 @@ export const WaitlistForm = () => {
 
   if (isSubmitted) {
     return (
-      <div className="max-w-2xl mx-auto p-6 sm:p-8 bg-secondary/20 rounded-lg border border-border animate-fade-in text-center">
-        <CheckCircle2 className="mx-auto mb-3 sm:mb-4 text-primary" size={40} />
-        <h3 className="font-display text-xl sm:text-2xl font-medium text-foreground mb-2">
+      <div className="max-w-2xl mx-auto p-8 bg-secondary/20 rounded-lg border border-border animate-fade-in text-center">
+        <CheckCircle2 className="mx-auto mb-4 text-primary" size={48} />
+        <h3 className="font-display text-2xl font-medium text-foreground mb-2">
           Thank You!
         </h3>
-        <p className="text-sm sm:text-base text-muted-foreground">
+        <p className="text-muted-foreground">
           Please check your inbox to confirm your subscription.
         </p>
       </div>
@@ -98,12 +98,12 @@ export const WaitlistForm = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-4 sm:p-6 md:p-8 bg-secondary/10 rounded-lg border border-border/50">
-      <div className="text-center mb-4 sm:mb-6">
-        <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-2 px-2">
+    <div className="max-w-2xl mx-auto p-6 md:p-8 bg-secondary/10 rounded-lg border border-border/50">
+      <div className="text-center mb-6">
+        <p className="text-sm md:text-base text-muted-foreground mb-2">
           Platform launching early 2026 — secure your spot to invest in mineral markets.
         </p>
-        <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-light text-foreground">
+        <h3 className="font-display text-2xl md:text-3xl font-light text-foreground">
           Join the Waitlist
         </h3>
       </div>

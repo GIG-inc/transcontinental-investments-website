@@ -52,31 +52,31 @@ const About = () => {
     <div className="min-h-screen bg-background">
       {/* Header Navigation */}
       <header className="border-b border-border">
-        <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-1 sm:gap-2 text-foreground hover:text-muted-foreground transition-colors">
-            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-xs sm:text-sm font-medium">Back to Home</span>
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 text-foreground hover:text-muted-foreground transition-colors">
+            <ArrowLeft size={20} />
+            <span className="text-sm font-medium">Back to Home</span>
           </Link>
           <Link to="/waitlist">
-            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">Join Waitlist</Button>
+            <Button variant="default" size="sm">Join Waitlist</Button>
           </Link>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="about-hero py-12 sm:py-16 md:py-24 px-4">
+      <section className="about-hero py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
             About Transcontinental Investments
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Leading the future of precious metals trading and mineral investments across East Africa and beyond.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <main className="container mx-auto max-w-4xl px-4 pb-12 sm:pb-20">
+      <main className="container mx-auto max-w-4xl px-4 pb-20">
         
         {/* Company Overview */}
         <section className="mb-16 animate-fade-in">

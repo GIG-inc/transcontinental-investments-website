@@ -59,17 +59,16 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="px-4 py-4 sm:py-6 border-b border-border/50">
+      <header className="px-4 py-6 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
-            <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Back to Home</span>
-              <span className="sm:hidden">Back</span>
+            <Button variant="ghost" size="default" className="gap-2">
+              <ArrowLeft size={18} />
+              Back to Home
             </Button>
           </Link>
           <Link to="/waitlist">
-            <Button variant="default" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
+            <Button variant="default" size="sm">
               Join Waitlist
             </Button>
           </Link>
@@ -77,21 +76,21 @@ const Products = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 border-b border-border/50">
+      <section className="py-16 md:py-24 px-4 border-b border-border/50">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-4 sm:mb-6">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
             Our Products & Services
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Comprehensive solutions across the precious metals value chain. From buying and selling to innovation and refinement.
           </p>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="py-12 sm:py-16 md:py-20 px-4">
+      <section className="py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
