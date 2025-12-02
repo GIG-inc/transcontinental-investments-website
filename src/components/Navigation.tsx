@@ -1,8 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -16,6 +15,17 @@ export const Navigation = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50">
@@ -48,38 +58,54 @@ export const Navigation = () => {
           </nav>
 
           {/* Mobile Navigation */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" aria-label="Open menu">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setOpen(false)}
-                    className={`text-base font-medium transition-colors py-2 ${
-                      isActive(link.to)
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Link to="/waitlist" onClick={() => setOpen(false)} className="mt-4">
-                  <Button variant="default" className="w-full" aria-label="Join the waitlist">
-                    Join Waitlist
-                  </Button>
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <div className="md:hidden">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              aria-label="Toggle menu"
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {open && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
+            onClick={() => setOpen(false)}
+          />
+          
+          {/* Dropdown Content */}
+          <div className="absolute top-full left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50 shadow-lg animate-fade-in">
+            <nav className="container mx-auto px-[26px] py-6 flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setOpen(false)}
+                  className={`text-base font-medium transition-colors py-3 px-4 rounded-md ${
+                    isActive(link.to)
+                      ? "text-foreground bg-accent/50"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/30"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link to="/waitlist" onClick={() => setOpen(false)} className="mt-2">
+                <Button variant="default" className="w-full" aria-label="Join the waitlist">
+                  Join Waitlist
+                </Button>
+              </Link>
+            </nav>
+          </div>
+        </>
+      )}
     </header>
   );
 };
