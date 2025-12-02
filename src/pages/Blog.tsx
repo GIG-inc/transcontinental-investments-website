@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { NavLink } from "@/components/NavLink";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const Blog = () => {
   const blogPosts = [
@@ -18,25 +19,13 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border">
-        <div className="container mx-auto px-4 py-4 md:py-6">
-          <nav className="flex items-center justify-between">
-            <Link to="/" className="text-xl md:text-2xl font-display font-semibold tracking-wider">
-              TRANSCONTINENTAL
-            </Link>
-            <div className="flex items-center gap-4 md:gap-6">
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/blog">Blog</NavLink>
-              <Link to="/waitlist">
-                <Button size="sm" variant="default">
-                  Join Waitlist
-                </Button>
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <SEO 
+        title="Blog | Insights on Precious Metals Trading - Transcontinental Investments"
+        description="Expert insights on precious metals trading, mineral investments, and market trends in East Africa. Investment guides and industry analysis."
+        keywords="precious metals blog, gold investment guide, mineral market trends, East Africa mining insights, precious metals trading tips"
+        canonical="https://transcontinentalinvestments.com/blog"
+      />
+      <Navigation />
 
       {/* Hero Section */}
       <section className="py-12 md:py-20 border-b border-border">
@@ -94,19 +83,11 @@ const Blog = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8 md:py-12 mt-auto">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
-            </p>
-            <Link to="/">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
-          </div>
+      <footer className="border-t border-border py-8 px-4 mt-auto">
+        <div className="container mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>

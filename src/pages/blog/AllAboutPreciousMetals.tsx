@@ -1,30 +1,20 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, TrendingUp, Shield, Globe, Zap } from "lucide-react";
-import { NavLink } from "@/components/NavLink";
+import { TrendingUp, Shield, Globe, Zap, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const AllAboutPreciousMetals = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border">
-        <div className="container mx-auto px-4 py-4 md:py-6">
-          <nav className="flex items-center justify-between">
-            <Link to="/" className="text-xl md:text-2xl font-display font-semibold tracking-wider">
-              TRANSCONTINENTAL
-            </Link>
-            <div className="flex items-center gap-4 md:gap-6">
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/blog">Blog</NavLink>
-              <Link to="/waitlist">
-                <Button size="sm" variant="default">
-                  Join Waitlist
-                </Button>
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <SEO 
+        title="Everything About Precious Metals | Complete Investment Guide 2025"
+        description="Complete guide to precious metals investment including gold, silver, platinum, and palladium. Learn about the East African mineral market and investment opportunities."
+        keywords="precious metals guide, gold investment guide, silver platinum investment, precious metals East Africa, mineral investment guide, gold market Kenya"
+        canonical="https://transcontinentalinvestments.com/blog/all-about-precious-metals"
+        ogType="article"
+      />
+      <Navigation />
 
       {/* Article Content */}
       <article className="py-12 md:py-16">

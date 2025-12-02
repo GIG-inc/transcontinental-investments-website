@@ -1,26 +1,19 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const GoldBuying = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
-            </Button>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">
-              Join Waitlist
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Gold Buying Services | We Buy Gold in East Africa - Transcontinental Investments"
+        description="Sell your gold to Transcontinental Investments. We purchase gold from individuals, businesses, and mining companies in Kenya, Uganda, Tanzania with transparent pricing and immediate payment."
+        keywords="buy gold Kenya, sell gold East Africa, gold buyers Kenya, gold purchasing services, sell gold Nairobi, cash for gold Kenya, gold dealers East Africa"
+        canonical="https://transcontinentalinvestments.com/products/gold-buying"
+      />
+      <Navigation />
 
       {/* Hero */}
       <section className="py-16 md:py-24 px-4">

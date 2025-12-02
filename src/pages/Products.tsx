@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb } from "lucide-react";
+import { ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const Products = () => {
   const products = [
@@ -58,22 +60,13 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Home
-            </Button>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">
-              Join Waitlist
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Products & Services | Transcontinental Investments - Precious Metals Trading"
+        description="Explore our comprehensive precious metals products: gold buying & selling, investment platform, mining partnerships, merchant platform, refinery, and innovation hub."
+        keywords="precious metals products, gold buying services, gold selling services, investment platform, mining partnerships, merchant platform, refinery services, mining innovation"
+        canonical="https://transcontinentalinvestments.com/products"
+      />
+      <Navigation />
 
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4 border-b border-border/50">
