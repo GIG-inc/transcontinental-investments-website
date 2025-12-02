@@ -58,20 +58,95 @@ const Products = () => {
     }
   ];
 
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Transcontinental Investments",
+        "item": "https://transcontinentalinvestments.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products & Services",
+        "item": "https://transcontinentalinvestments.com/products"
+      }
+    ]
+  };
+
+  // ItemList Schema for Products
+  const productListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Transcontinental Investments Products and Services",
+    "description": "Comprehensive precious metals trading products and services offered by Transcontinental Investments",
+    "itemListElement": products.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": product.title,
+        "description": product.description,
+        "url": `https://transcontinentalinvestments.com${product.link}`,
+        "provider": {
+          "@type": "Organization",
+          "name": "Transcontinental Investments"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "East Africa"
+        },
+        "serviceType": "Precious Metals Trading"
+      }
+    }))
+  };
+
+  // CollectionPage Schema
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Products & Services - Transcontinental Investments",
+    "description": "Explore our comprehensive precious metals products: gold buying & selling, investment platform, mining partnerships, merchant platform, refinery, and innovation hub.",
+    "url": "https://transcontinentalinvestments.com/products",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Precious Metals Products and Services"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Products & Services | Transcontinental Investments - Precious Metals Trading"
-        description="Explore our comprehensive precious metals products: gold buying & selling, investment platform, mining partnerships, merchant platform, refinery, and innovation hub."
-        keywords="precious metals products, gold buying services, gold selling services, investment platform, mining partnerships, merchant platform, refinery services, mining innovation"
+        title="Products & Services | Transcontinental Investments - Gold Buying, Selling & Investment Platform"
+        description="Explore Transcontinental Investments' precious metals products: gold buying & selling in East Africa, investment platform (2026), mining partnerships, merchant platform, refinery, and innovation hub. Serving East Africa and Beyond.."
+        keywords="Transcontinental Investments products, gold buying services Kenya, gold selling services East Africa, precious metals investment platform, mining partnerships, merchant platform, gold refinery, mining innovation hub"
         canonical="https://transcontinentalinvestments.com/products"
       />
+
+      {/* Add Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+      />
+
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 border-b border-border/50">
+      <section className="py-16 md:py-24 px-4 border-b border-border/50" aria-labelledby="products-heading">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 id="products-heading" className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
             Our Products & Services
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -81,37 +156,39 @@ const Products = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 md:py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 rounded-lg bg-secondary/50">
-                      <product.icon className="h-6 w-6 text-foreground" />
+      <main>
+        <section className="py-16 md:py-20 px-4" aria-label="Products and services list">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.map((product, index) => (
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 rounded-lg bg-secondary/50" aria-hidden="true">
+                        <product.icon className="h-6 w-6 text-foreground" />
+                      </div>
+                      <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
+                        {product.status}
+                      </span>
                     </div>
-                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
-                      {product.status}
-                    </span>
-                  </div>
-                  <CardTitle className="text-xl">{product.title}</CardTitle>
-                  <CardDescription className="text-sm">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link to={product.link}>
-                    <Button variant="outline" className="w-full">
-                      Learn More
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardTitle className="text-xl">{product.title}</CardTitle>
+                    <CardDescription className="text-sm">
+                      {product.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Link to={product.link}>
+                      <Button variant="outline" className="w-full" aria-label={`Learn more about ${product.title}`}>
+                        Learn More
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border mt-auto">

@@ -1,73 +1,153 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { TrendingUp, Globe, Users, Leaf, Target } from "lucide-react";
-import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { SEO } from "@/components/SEO";
 
 const About = () => {
+  // FAQ Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What minerals do you trade?",
+        "name": "What minerals does Transcontinental Investments trade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We specialize in precious metals including gold, silver, and platinum, as well as rare earth elements and construction minerals. Our portfolio continues to expand based on market demand and opportunities."
+          "text": "Transcontinental Investments specializes in precious metals including gold, silver, and platinum, as well as rare earth elements and construction minerals. Our portfolio continues to expand based on market demand and opportunities across East Africa."
         }
       },
       {
         "@type": "Question",
-        "name": "When will the investment platform launch?",
+        "name": "When will the Transcontinental Investments platform launch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our innovative investment platform is scheduled to launch in early 2026. Join our waitlist to receive exclusive updates and early access opportunities."
+          "text": "Our innovative investment platform is scheduled to launch in early 2026. Join our waitlist to receive exclusive updates and early access opportunities to invest in precious metals and minerals."
         }
       },
       {
         "@type": "Question",
-        "name": "How do you ensure ethical sourcing?",
+        "name": "How does Transcontinental Investments ensure ethical sourcing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We partner exclusively with certified suppliers who meet international standards for responsible mining. Our supply chain includes comprehensive verification and traceability measures."
+          "text": "We partner exclusively with certified suppliers who meet international standards for responsible mining. Our supply chain includes comprehensive verification and traceability measures to ensure ethical mineral sourcing across East Africa."
         }
       }
     ]
   };
 
-  useEffect(() => {
-    // Add FAQ schema to the page
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(faqSchema);
-    document.head.appendChild(script);
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Transcontinental Investments",
+        "item": "https://transcontinentalinvestments.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://transcontinentalinvestments.com/about"
+      }
+    ]
+  };
 
-    // Cleanup on unmount
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+  // Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Transcontinental Investments",
+    "url": "https://transcontinentalinvestments.com",
+    "logo": "https://transcontinentalinvestments.com/logo-square.png",
+    "description": "Premier precious metals trading and mineral investment company based in East Africa. We specialize in connecting miners, refiners, investors, corporations, and financial institutions through transparent and ethical mineral trade.",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "East Africa"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Kenya"
+      },
+      {
+        "@type": "Country",
+        "name": "Uganda"
+      },
+      {
+        "@type": "Country",
+        "name": "Tanzania"
+      },
+      {
+        "@type": "Country",
+        "name": "Rwanda"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/transcontinental_investments",
+      "https://www.facebook.com/transcontinentalinvestments",
+      "https://x.com/T_C_Investments",
+      "https://linkedin.com/company/transcontinentalinvestments"
+    ]
+  };
+
+  // AboutPage Schema
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Transcontinental Investments",
+    "description": "Learn about Transcontinental Investments, a premier precious metals trading and mineral investment company in East Africa.",
+    "url": "https://transcontinentalinvestments.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Transcontinental Investments"
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="About Us | Transcontinental Investments - Leading Precious Metals Trading Company"
-        description="Learn about Transcontinental Investments, a premier precious metals trading and mineral investment company in East Africa. We connect miners, refiners, investors, and institutions through ethical trade."
-        keywords="about Transcontinental Investments, precious metals company East Africa, ethical mineral sourcing, sustainable mining, gold trading Kenya, mineral investment company"
+        title="About Transcontinental Investments | Leading Precious Metals Trading Company in East Africa"
+        description="Learn about Transcontinental Investments, East Africa's premier precious metals trading and mineral investment company. We connect miners, refiners, investors, and institutions through ethical gold, silver, and platinum trade."
+        keywords="about Transcontinental Investments, precious metals company East Africa, ethical mineral sourcing, sustainable mining, gold trading Kenya, mineral investment company, silver platinum trading Africa"
         canonical="https://transcontinentalinvestments.com/about"
       />
+
+      {/* Add Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
+
       <Navigation />
 
       {/* Hero Section */}
-      <section className="about-hero py-16 md:py-24 px-4">
+      <section className="about-hero py-16 md:py-24 px-4" aria-labelledby="about-heading">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+          <h1 
+            id="about-heading"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6"
+          >
             About Transcontinental Investments
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Leading the future of precious metals trading and mineral investments across East Africa and beyond.
+            Premier gold, silver, and platinum trading company connecting miners, investors, and institutions across East Africa and Beyond.
           </p>
         </div>
       </section>
@@ -76,24 +156,28 @@ const About = () => {
       <main className="container mx-auto max-w-4xl px-4 pb-20">
         
         {/* Company Overview */}
-        <section className="mb-16 animate-fade-in">
+        <section className="mb-16 animate-fade-in" aria-labelledby="who-we-are">
           <div className="flex items-center gap-3 mb-6">
-            <Globe className="text-primary" size={28} />
-            <h2 className="font-display text-3xl md:text-4xl font-light text-foreground">Who We Are</h2>
+            <Globe className="text-primary" size={28} aria-hidden="true" />
+            <h2 id="who-we-are" className="font-display text-3xl md:text-4xl font-light text-foreground">
+              Who We Are
+            </h2>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Transcontinental Investments is a premier precious metals trading and mineral investment company based in East Africa. We specialize in connecting miners, refiners, investors, corporations, and financial institutions through transparent and ethical mineral trade.
+            <strong>Transcontinental Investments</strong> is a premier precious metals trading and mineral investment company based in East Africa. We specialize in connecting miners, refiners, investors, corporations, and financial institutions through transparent and ethical mineral trade.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Our expertise spans gold, silver, platinum, and other valuable minerals, creating reliable supply chains that benefit all stakeholders in the mineral sector ecosystem.
+            Our expertise spans <strong>gold, silver, platinum</strong>, and other valuable minerals, creating reliable supply chains that benefit all stakeholders in the mineral sector ecosystem across Kenya, Uganda, Tanzania, and Rwanda.
           </p>
         </section>
 
         {/* Mission */}
-        <section className="mb-16 animate-fade-in">
+        <section className="mb-16 animate-fade-in" aria-labelledby="mission">
           <div className="flex items-center gap-3 mb-6">
-            <Target className="text-primary" size={28} />
-            <h2 className="font-display text-3xl md:text-4xl font-light text-foreground">Our Mission</h2>
+            <Target className="text-primary" size={28} aria-hidden="true" />
+            <h2 id="mission" className="font-display text-3xl md:text-4xl font-light text-foreground">
+              Our Mission
+            </h2>
           </div>
           <p className="text-muted-foreground leading-relaxed">
             We invest in and actively grow the mineral sector by exploring opportunities in rare earth elements and construction minerals. Our mission is to empower investors with transparent access to mineral markets while supporting sustainable extraction and ethical sourcing practices across Africa.
@@ -101,54 +185,66 @@ const About = () => {
         </section>
 
         {/* What We Do */}
-        <section className="mb-16 animate-fade-in">
+        <section className="mb-16 animate-fade-in" aria-labelledby="what-we-do">
           <div className="flex items-center gap-3 mb-6">
-            <TrendingUp className="text-primary" size={28} />
-            <h2 className="font-display text-3xl md:text-4xl font-light text-foreground">What We Do</h2>
+            <TrendingUp className="text-primary" size={28} aria-hidden="true" />
+            <h2 id="what-we-do" className="font-display text-3xl md:text-4xl font-light text-foreground">
+              What We Do
+            </h2>
           </div>
           
           <div className="space-y-8">
-            <div>
-              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">Precious Metals Trading</h3>
+            <article>
+              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">
+                Precious Metals Trading
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                We facilitate the buying and selling of gold, silver, platinum, and valuable minerals. Our extensive network ensures competitive pricing and reliable delivery for institutional and individual clients.
+                We facilitate the buying and selling of <strong>gold, silver, platinum</strong>, and valuable minerals. Our extensive network ensures competitive pricing and reliable delivery for institutional and individual clients across East Africa.
               </p>
-            </div>
+            </article>
 
-            <div>
-              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">Distribution & Logistics</h3>
+            <article>
+              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">
+                Distribution & Logistics
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Through strategic partnerships with miners, refiners, and banks, we manage the complete supply chain from extraction to delivery, ensuring quality assurance and timely fulfillment.
               </p>
-            </div>
+            </article>
 
-            <div>
-              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">Investment Platform (Launching Early 2026)</h3>
+            <article>
+              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">
+                Investment Platform <span className="text-primary">(Launching Early 2026)</span>
+              </h3>
               <p className="text-muted-foreground leading-relaxed mb-3">
                 Our innovative investment platform will democratize access to mineral markets. Individual investors can contribute funds to mineral projects and receive returns with competitive interest after a predetermined period.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Investors will have the flexibility to reinvest fully or partially, creating sustainable wealth-building opportunities through tangible asset exposure.
               </p>
-            </div>
+            </article>
 
-            <div>
-              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">Portfolio Expansion</h3>
+            <article>
+              <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">
+                Portfolio Expansion
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
                 We continuously explore rare earth elements and construction minerals, positioning our clients at the forefront of emerging commodity markets with significant growth potential.
               </p>
-            </div>
+            </article>
           </div>
         </section>
 
         {/* Sustainable Practices */}
-        <section className="mb-16 animate-fade-in">
+        <section className="mb-16 animate-fade-in" aria-labelledby="sustainability">
           <div className="flex items-center gap-3 mb-6">
-            <Leaf className="text-primary" size={28} />
-            <h2 className="font-display text-3xl md:text-4xl font-light text-foreground">Sustainable Practices</h2>
+            <Leaf className="text-primary" size={28} aria-hidden="true" />
+            <h2 id="sustainability" className="font-display text-3xl md:text-4xl font-light text-foreground">
+              Sustainable Practices & Ethical Sourcing
+            </h2>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Ethical sourcing and sustainable supply chain management are fundamental to our operations. We work exclusively with certified partners who adhere to responsible mining practices.
+            <strong>Ethical sourcing</strong> and sustainable supply chain management are fundamental to our operations. We work exclusively with certified partners who adhere to responsible mining practices across East Africa.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Our commitment to innovation drives us to continuously improve transparency, traceability, and environmental stewardship throughout the mineral value chain.
@@ -156,10 +252,12 @@ const About = () => {
         </section>
 
         {/* Vision */}
-        <section className="mb-16 animate-fade-in">
+        <section className="mb-16 animate-fade-in" aria-labelledby="vision">
           <div className="flex items-center gap-3 mb-6">
-            <Users className="text-primary" size={28} />
-            <h2 className="font-display text-3xl md:text-4xl font-light text-foreground">Our Vision</h2>
+            <Users className="text-primary" size={28} aria-hidden="true" />
+            <h2 id="vision" className="font-display text-3xl md:text-4xl font-light text-foreground">
+              Our Vision
+            </h2>
           </div>
           <p className="text-muted-foreground leading-relaxed">
             To become a global leader in mineral investments by expanding our portfolio across continents, driving innovation in mining technologies, and creating accessible investment opportunities that generate sustainable returns for individuals and institutions worldwide.
@@ -167,33 +265,41 @@ const About = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="mb-16 animate-fade-in">
-          <h2 className="font-display text-3xl md:text-4xl font-light text-foreground mb-8 text-center">Frequently Asked Questions</h2>
+        <section className="mb-16 animate-fade-in" aria-labelledby="faq">
+          <h2 id="faq" className="font-display text-3xl md:text-4xl font-light text-foreground mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-6">
-            <div className="border-l-2 border-primary pl-6">
-              <h3 className="font-display text-lg md:text-xl font-medium text-foreground mb-2">What minerals do you trade?</h3>
+            <article className="border-l-2 border-primary pl-6">
+              <h3 className="font-display text-lg md:text-xl font-medium text-foreground mb-2">
+                What minerals does Transcontinental Investments trade?
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                We specialize in precious metals including gold, silver, and platinum, as well as rare earth elements and construction minerals. Our portfolio continues to expand based on market demand and opportunities.
+                We specialize in precious metals including <strong>gold, silver, and platinum</strong>, as well as rare earth elements and construction minerals. Our portfolio continues to expand based on market demand and opportunities across East Africa.
               </p>
-            </div>
-            <div className="border-l-2 border-primary pl-6">
-              <h3 className="font-display text-lg md:text-xl font-medium text-foreground mb-2">When will the investment platform launch?</h3>
+            </article>
+            <article className="border-l-2 border-primary pl-6">
+              <h3 className="font-display text-lg md:text-xl font-medium text-foreground mb-2">
+                When will the investment platform launch?
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Our innovative investment platform is scheduled to launch in early 2026. Join our waitlist to receive exclusive updates and early access opportunities.
+                Our innovative investment platform is scheduled to launch in <strong>early 2026</strong>. Join our waitlist to receive exclusive updates and early access opportunities.
               </p>
-            </div>
-            <div className="border-l-2 border-primary pl-6">
-              <h3 className="font-display text-lg md:text-xl font-medium text-foreground mb-2">How do you ensure ethical sourcing?</h3>
+            </article>
+            <article className="border-l-2 border-primary pl-6">
+              <h3 className="font-display text-lg md:text-xl font-medium text-foreground mb-2">
+                How does Transcontinental Investments ensure ethical sourcing?
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
                 We partner exclusively with certified suppliers who meet international standards for responsible mining. Our supply chain includes comprehensive verification and traceability measures.
               </p>
-            </div>
+            </article>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="text-center py-12 px-6 bg-secondary/30 rounded-lg animate-fade-in">
-          <h2 className="font-display text-2xl md:text-3xl font-light text-foreground mb-4">
+        <section className="text-center py-12 px-6 bg-secondary/30 rounded-lg animate-fade-in" aria-labelledby="cta">
+          <h2 id="cta" className="font-display text-2xl md:text-3xl font-light text-foreground mb-4">
             Ready to Invest in the Future?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
