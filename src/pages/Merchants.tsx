@@ -1,27 +1,18 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { MerchantForm } from "@/components/MerchantForm";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const Merchants = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Home
-            </Button>
-          </Link>
-          <Link to="/about">
-            <Button variant="default" size="sm">
-              About
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Merchant Platform | Buy & Sell Gold - Transcontinental Investments"
+        description="Join our exclusive merchant platform to buy gold from us or sell gold to us. Connect with Transcontinental Investments for secure, seamless gold transactions. Launching early 2026."
+        keywords="merchant platform gold, buy gold wholesale, sell gold Kenya, gold buyers East Africa, gold sellers platform, B2B gold trading"
+        canonical="https://transcontinentalinvestments.com/merchants"
+      />
+      <Navigation />
 
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4">

@@ -1,26 +1,19 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, TrendingUp, Shield, BarChart3, Globe } from "lucide-react";
+import { TrendingUp, Shield, BarChart3, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const InvestmentPlatform = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
-            </Button>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">
-              Join Waitlist
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Investment Platform | Mineral Market Investment - Transcontinental Investments"
+        description="Join our investment platform launching early 2026. Invest in precious metals and mineral markets with competitive returns and flexible reinvestment options in East Africa."
+        keywords="mineral investment platform, precious metals investment, gold investment Kenya, investment opportunities East Africa, mineral market returns, invest in mining"
+        canonical="https://transcontinentalinvestments.com/products/investment-platform"
+      />
+      <Navigation />
 
       {/* Hero */}
       <section className="py-16 md:py-24 px-4">

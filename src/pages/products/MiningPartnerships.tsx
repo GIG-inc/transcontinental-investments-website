@@ -1,26 +1,19 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Handshake, FileCheck, Users, TrendingUp } from "lucide-react";
+import { Handshake, FileCheck, Users, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const MiningPartnerships = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
-            </Button>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">
-              Join Waitlist
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Mining Partnerships | Support for Miners - Transcontinental Investments"
+        description="Partner with us for mining license support and operational assistance. We help miners obtain licenses and provide comprehensive support for mining operations in East Africa."
+        keywords="mining partnerships Kenya, mining license support, mining operations support, partner with miners East Africa, mining assistance Kenya"
+        canonical="https://transcontinentalinvestments.com/products/mining-partnerships"
+      />
+      <Navigation />
 
       {/* Hero */}
       <section className="py-16 md:py-24 px-4">

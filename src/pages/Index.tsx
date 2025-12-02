@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Linkedin, ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Building2, Briefcase, Landmark, Globe } from "lucide-react";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 const Index = () => {
   const products = [{
     icon: ShoppingCart,
@@ -62,35 +64,13 @@ const Index = () => {
     desc: "Source premium gold from East Africa"
   }];
   return <div className="min-h-screen bg-background flex flex-col">
-      {/* Header Navigation */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50">
-        <div className="container mx-auto md:py-5 px-[26px] py-[19px] my-0">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="font-display font-semibold text-lg">TCI</span>
-            </Link>
-            <nav className="flex items-center gap-4 md:gap-6">
-              <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                About
-              </Link>
-              <Link to="/products" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Products
-              </Link>
-              <Link to="/merchants" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Merchants
-              </Link>
-              <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Blog
-              </Link>
-              <Link to="/waitlist">
-                <Button variant="default" size="sm" aria-label="Join the waitlist">
-                  Join Waitlist
-                </Button>
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <SEO 
+        title="Transcontinental Investments | Precious Metals Trading & Investment Platform"
+        description="Buy, sell, and invest in gold, silver, platinum & rare minerals with Transcontinental Investments. Leading precious metals trading company in East Africa with ethical sourcing and transparent transactions."
+        keywords="precious metals trading, gold buying Kenya, gold selling East Africa, mineral investment, platinum trading, silver trading, ethical gold sourcing, East Africa investment platform"
+        canonical="https://transcontinentalinvestments.com/"
+      />
+      <Navigation />
 
       {/* Hero Section */}
       <section className="py-20 px-4 md:py-0">

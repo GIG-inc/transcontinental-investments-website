@@ -1,27 +1,18 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/WaitlistForm";
-import { ArrowLeft } from "lucide-react";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const Waitlist = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Navigation */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/">
-            <Button variant="ghost" size="default" className="gap-2" aria-label="Back to home">
-              <ArrowLeft size={18} />
-              Back to Home
-            </Button>
-          </Link>
-          <Link to="/about">
-            <Button variant="default" size="sm" aria-label="Learn more about Transcontinental Investments">
-              About
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Join Waitlist | Transcontinental Investments"
+        description="Join the waitlist to be among the first to access our investment platform and secure your position in the future of precious metals and mineral markets."
+        keywords="investment platform waitlist, precious metals investment, early access mineral trading, Transcontinental Investments waitlist"
+        canonical="https://transcontinentalinvestments.com/waitlist"
+      />
+      <Navigation />
 
       {/* Waitlist Section */}
       <section className="py-12 md:py-20 px-4">

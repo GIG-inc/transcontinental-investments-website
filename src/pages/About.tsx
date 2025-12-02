@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, TrendingUp, Globe, Users, Leaf, Target } from "lucide-react";
+import { TrendingUp, Globe, Users, Leaf, Target } from "lucide-react";
 import { useEffect } from "react";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const About = () => {
   const faqSchema = {
@@ -50,18 +52,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Navigation */}
-      <header className="border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-foreground hover:text-muted-foreground transition-colors">
-            <ArrowLeft size={20} />
-            <span className="text-sm font-medium">Back to Home</span>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">Join Waitlist</Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="About Us | Transcontinental Investments - Leading Precious Metals Trading Company"
+        description="Learn about Transcontinental Investments, a premier precious metals trading and mineral investment company in East Africa. We connect miners, refiners, investors, and institutions through ethical trade."
+        keywords="about Transcontinental Investments, precious metals company East Africa, ethical mineral sourcing, sustainable mining, gold trading Kenya, mineral investment company"
+        canonical="https://transcontinentalinvestments.com/about"
+      />
+      <Navigation />
 
       {/* Hero Section */}
       <section className="about-hero py-16 md:py-24 px-4">

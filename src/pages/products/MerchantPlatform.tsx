@@ -1,26 +1,19 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Store, ShieldCheck, BarChart, Users } from "lucide-react";
+import { Store, ShieldCheck, BarChart, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const MerchantPlatform = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
-            </Button>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">
-              Join Waitlist
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Merchant Platform | Gold Trading Marketplace - Transcontinental Investments"
+        description="Join our merchant platform launching early 2026. Trade gold directly with us through our secure B2B marketplace for verified buyers and sellers in East Africa."
+        keywords="merchant platform gold, B2B gold trading, gold marketplace Kenya, wholesale gold trading, merchant gold buying, merchant gold selling"
+        canonical="https://transcontinentalinvestments.com/products/merchant-platform"
+      />
+      <Navigation />
 
       {/* Hero */}
       <section className="py-16 md:py-24 px-4">

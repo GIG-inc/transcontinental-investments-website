@@ -1,26 +1,19 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Lightbulb, Cpu, Truck, Microscope } from "lucide-react";
+import { Lightbulb, Cpu, Truck, Microscope } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 
 const InnovationHub = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="px-4 py-6 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/products">
-            <Button variant="ghost" size="default" className="gap-2">
-              <ArrowLeft size={18} />
-              Back to Products
-            </Button>
-          </Link>
-          <Link to="/waitlist">
-            <Button variant="default" size="sm">
-              Join Waitlist
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <SEO 
+        title="Innovation Hub | Mining Technology & Robotics - Transcontinental Investments"
+        description="Join our innovation hub for mining technology advancement. We're exploring robotics for mining, sustainable extraction, and next-generation mining solutions in East Africa."
+        keywords="mining innovation, mining robotics, mining technology Kenya, innovation hub mining, sustainable mining technology, mining R&D East Africa"
+        canonical="https://transcontinentalinvestments.com/products/innovation-hub"
+      />
+      <Navigation />
 
       {/* Hero */}
       <section className="py-16 md:py-24 px-4">
