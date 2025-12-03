@@ -277,12 +277,12 @@ const Product = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <Link to="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       Products & Trading
                     </Link>
                   </li>
                   <li>
-                    <Link to="/merchant" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <Link to="/merchants" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       Merchant Services
                     </Link>
                   </li>
