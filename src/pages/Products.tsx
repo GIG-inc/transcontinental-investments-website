@@ -127,7 +127,7 @@ const Product = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Products & Trading Platform | Transcontinental Investments - Gold Buying, Selling & Investment"
+        title="Products & Investment Platform | Transcontinental Investments - Gold Buying, Selling & Investment"
         description="Explore Transcontinental Investments' precious metals products: gold buying & selling in East Africa, investment platform (2026), mining partnerships, merchant platform, refinery, and innovation hub. Serving East Africa and beyond."
         keywords="Transcontinental Investments products, gold buying services Kenya, gold selling services East Africa, precious metals investment platform, mining partnerships, merchant platform, gold refinery, mining innovation hub"
         canonical="https://transcontinentalinvestments.com/product"

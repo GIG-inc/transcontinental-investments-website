@@ -89,7 +89,7 @@ const Merchant = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Merchant Services | B2B Gold Trading Platform - Transcontinental Investments"
+        title="Merchant Platform | Buy from us Sell to us - Transcontinental Investments"
         description="Join our exclusive merchant platform to buy gold from us or sell gold to us. Connect with Transcontinental Investments for secure, seamless gold transactions. Launching early 2026."
         keywords="merchant platform gold, buy gold wholesale, sell gold Kenya, gold buyers East Africa, gold sellers platform, B2B gold trading, gold merchant services"
         canonical="https://transcontinentalinvestments.com/merchants"
@@ -117,7 +117,7 @@ const Merchant = () => {
             id="merchant-heading"
             className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6"
           >
-            Merchant Services
+            Merchant Platform
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Join our exclusive merchant platform to buy gold from us or sell gold to us. Connect directly with Transcontinental Investments for seamless, secure B2B precious metals transactions.
@@ -138,7 +138,7 @@ const Merchant = () => {
             What is the Merchant Platform?
           </h2>
           <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-            Our merchant platform is a specialized B2B marketplace designed for verified buyers and sellers to trade gold directly with Transcontinental Investments. Whether you want to purchase gold from us or sell gold to us, the platform provides:
+            Our merchant platform is a specialized marketplace designed for verified buyers and sellers to trade gold directly with Transcontinental Investments. Whether you want to purchase gold from us or sell gold to us, the platform provides:
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             <article className="p-6 border border-border rounded-lg bg-background">
