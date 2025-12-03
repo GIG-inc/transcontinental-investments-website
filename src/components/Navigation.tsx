@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/products", label: "Products" },
   { to: "/merchants", label: "Merchants" },
   { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export const Navigation = () => {
@@ -61,8 +62,9 @@ export const Navigation = () => {
               size="icon"
               aria-label="Toggle menu"
               onClick={() => setOpen((prev) => !prev)}
+              className="h-10 w-10"
             >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>

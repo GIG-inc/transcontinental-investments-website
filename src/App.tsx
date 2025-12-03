@@ -18,6 +18,7 @@ import MerchantPlatform from "./pages/products/MerchantPlatform";
 import Refinery from "./pages/products/Refinery";
 import InnovationHub from "./pages/products/InnovationHub";
 import Merchants from "./pages/Merchants";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/products/refinery" element={<Refinery />} />
           <Route path="/products/innovation-hub" element={<InnovationHub />} />
           <Route path="/merchants" element={<Merchants />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
