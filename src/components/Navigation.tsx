@@ -35,24 +35,33 @@ export const Navigation = () => {
             <span className="font-display font-semibold text-lg">TCI</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.to)
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link to="/waitlist">
-              <Button variant="default" size="sm">Join Waitlist</Button>
-            </Link>
+          {/* Desktop Navigation - SEMANTIC NAV STRUCTURE */}
+          <nav 
+            className="hidden md:flex items-center gap-6" 
+            role="navigation" 
+            aria-label="Main Navigation"
+          >
+            <ul id="primary-menu" className="flex items-center gap-6 list-none m-0 p-0">
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className={`text-sm font-medium transition-colors ${
+                      isActive(link.to)
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link to="/waitlist">
+                  <Button variant="default" size="sm">Join Waitlist</Button>
+                </Link>
+              </li>
+            </ul>
           </nav>
 
           {/* Mobile toggle button */}
@@ -61,6 +70,8 @@ export const Navigation = () => {
               variant="ghost"
               size="icon"
               aria-label="Toggle menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
               onClick={() => setOpen((prev) => !prev)}
               className="h-10 w-10"
             >
@@ -85,34 +96,44 @@ export const Navigation = () => {
               onClick={() => setOpen(false)}
             />
 
-            {/* Dropdown */}
+            {/* Dropdown - SEMANTIC NAV STRUCTURE */}
             <motion.div
               key="dropdown"
+              id="mobile-menu"
               className="absolute top-full left-0 right-0 bg-white border-b border-border/50 shadow-lg md:hidden z-50"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              <nav className="container mx-auto px-[26px] py-6 flex flex-col gap-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setOpen(false)}
-                    className={`text-base font-medium transition-colors py-3 px-4 rounded-md ${
-                      isActive(link.to)
-                        ? "text-foreground bg-accent/50"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent/30"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <nav 
+                className="container mx-auto px-[26px] py-6" 
+                role="navigation" 
+                aria-label="Mobile Navigation"
+              >
+                <ul className="flex flex-col gap-1 list-none m-0 p-0">
+                  {navLinks.map((link) => (
+                    <li key={link.to}>
+                      <Link
+                        to={link.to}
+                        onClick={() => setOpen(false)}
+                        className={`text-base font-medium transition-colors py-3 px-4 rounded-md block ${
+                          isActive(link.to)
+                            ? "text-foreground bg-accent/50"
+                            : "text-muted-foreground hover:text-foreground hover:bg-accent/30"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
 
-                <Link to="/waitlist" onClick={() => setOpen(false)} className="mt-2">
-                  <Button className="w-full">Join Waitlist</Button>
-                </Link>
+                  <li className="mt-2">
+                    <Link to="/waitlist" onClick={() => setOpen(false)}>
+                      <Button className="w-full">Join Waitlist</Button>
+                    </Link>
+                  </li>
+                </ul>
               </nav>
             </motion.div>
           </>

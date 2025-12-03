@@ -11,40 +11,40 @@ const Index = () => {
     icon: ShoppingCart,
     title: "Gold Buying",
     description: "Purchase gold from miners and sellers across East Africa with transparent pricing",
-    link: "/products/gold-buying"
+    link: "/product"
   }, {
     icon: Store,
     title: "Gold Selling",
     description: "Sell premium gold to investors and international buyers",
-    link: "/products/gold-selling"
+    link: "/product"
   }, {
     icon: TrendingUp,
     title: "Investment Platform",
     description: "Invest in gold, silver, platinum and rare minerals",
-    link: "/products/investment-platform",
+    link: "/product",
     badge: "2026"
   }, {
     icon: Handshake,
     title: "Mining Partnerships",
     description: "Partnership opportunities with mining operations",
-    link: "/products/mining-partnerships"
+    link: "/product"
   }, {
     icon: Users,
     title: "Merchant Platform",
     description: "Digital marketplace for precious metals trading",
-    link: "/products/merchant-platform",
+    link: "/merchant",
     badge: "2026"
   }, {
     icon: Factory,
     title: "Refinery",
     description: "State-of-the-art gold and precious metals refining facility",
-    link: "/products/refinery",
+    link: "/product",
     badge: "2027"
   }, {
     icon: Lightbulb,
     title: "Innovation Hub",
     description: "Research and development in mining technology",
-    link: "/products/innovation-hub"
+    link: "/product"
   }];
 
   const audiences = [{
@@ -118,13 +118,16 @@ const Index = () => {
                 />
               </div>
               
-              {/* FIXED H1 - Now contains brand name and keywords */}
-
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-wider text-foreground mb-6">
-                COMING SOON
+              {/* IMPROVED H1 WITH BRAND NAME + KEYWORDS */}
+              <h1 
+                id="hero-heading"
+                className="font-display text-2xl md:text-3xl lg:text-4xl font-light tracking-wider text-foreground mb-6"
+              >
+                Transcontinental Investments | Buy & Sell Gold, Precious Metals Trading in East Africa
               </h1>
+              
               <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Buy, sell, and invest in precious metals and minerals with Transcontinental Investments. We are currently focused on the precious metals mining sector and will be expanding into other mining markets in the future.
+                East Africa's leading precious metals trading platform. Buy gold, sell gold, invest in silver, platinum & minerals. Ethical sourcing, transparent pricing. Serving Kenya, Uganda, Tanzania & Rwanda.
               </p>
               
               <div className="mb-10">
@@ -249,7 +252,7 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <Link to="/products">
+              <Link to="/product">
                 <Button size="lg" variant="default">
                   View All Products
                 </Button>
@@ -343,12 +346,120 @@ const Index = () => {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="py-4 px-4 border-t border-border">
-        <div className="container mx-auto text-center">
-          <p className="text-xs md:text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
-          </p>
+      {/* SEMANTIC FOOTER WITH PRIMARY PAGES (CRITICAL FOR SITELINKS) */}
+      <footer className="py-12 px-4 border-t border-border bg-secondary/10">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            {/* Company Info */}
+            <div>
+              <h3 className="font-semibold text-foreground mb-4">Transcontinental Investments</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                East Africa's leading precious metals trading and mineral investment platform.
+              </p>
+            </div>
+
+            {/* Quick Links - PRIMARY PAGES */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
+              <nav role="navigation" aria-label="Footer Navigation">
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      About Transcontinental
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      Products & Trading
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/merchant" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      Merchant Services
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Resources</h4>
+              <nav role="navigation" aria-label="Resources Navigation">
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      Blog & Market Insights
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/waitlist" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      Join Waitlist
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            {/* Social */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Connect With Us</h4>
+              <div className="flex gap-3">
+                <a 
+                  href="https://www.instagram.com/transcontinental_investments" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Instagram"
+                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                >
+                  <Instagram size={18} />
+                </a>
+                <a 
+                  href="https://www.facebook.com/transcontinentalinvestments" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Facebook"
+                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                >
+                  <Facebook size={18} />
+                </a>
+                <a 
+                  href="https://x.com/T_C_Investments" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="X (Twitter)"
+                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                >
+                  <Twitter size={18} />
+                </a>
+                <a 
+                  href="https://linkedin.com/company/transcontinentalinvestments" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="LinkedIn"
+                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                >
+                  <Linkedin size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-8 border-t border-border text-center">
+            <p className="text-xs md:text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
