@@ -38,7 +38,7 @@ export function MerchantForm() {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyZ3Aucc4Di9RgSpchofWiI0rE10x6U1W5-J8xqJY6p9m4HNUOGehEXnnE3aZLf-RlD/exec",
+        "https://script.google.com/macros/s/AKfycbxcRPgdOHyBrvVUuqoO0VnFH_Us314ehZ_QV6doifvPE-pKCfUeXHo13uj5rQrYN3FQ/exec",
         {
           method: "POST",
           mode: "no-cors",

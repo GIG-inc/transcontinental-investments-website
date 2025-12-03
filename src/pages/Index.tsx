@@ -194,6 +194,13 @@ const Index = () => {
               <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                 To be a leading Investment Company that specializes in all types of mining. We aim to be a self-sufficient company with complete vertical integration—from buying from miners, owning mines, operating refineries and processing plants, maintaining reserves, to selling directly to markets. Our goal is to become a self-sustaining Mining Investment Company that innovates the mining industry.
               </p>
+              <div className="mt-8">
+                <Link to="/about">
+                  <Button variant="outline" size="lg">
+                    Learn More About Us
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -286,7 +293,32 @@ const Index = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 Open to partnerships with international companies seeking premium precious metals from East Africa
               </p>
+              <Link to="/contact">
+                <Button variant="outline" size="lg">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section className="py-16 md:py-24 px-4" aria-labelledby="blog-heading">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 
+              id="blog-heading"
+              className="font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground mb-6"
+            >
+              Latest Insights
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Stay informed with our latest articles on precious metals, market trends, and industry news.
+            </p>
+            <Link to="/blog">
+              <Button variant="default" size="lg">
+                Read Our Blog
+              </Button>
+            </Link>
           </div>
         </section>
 
