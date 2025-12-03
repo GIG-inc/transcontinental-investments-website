@@ -14,7 +14,7 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <SEO 
         title="404 - Page Not Found | Transcontinental Investments"
-        description="The page you are looking for could not be found. Return to the homepage to explore our precious metals trading and investment services."
+        description="The page you are looking for could not be found. Return to the homepage to explore our precious metals trading and investment services in East Africa."
         canonical="https://transcontinentalinvestments.com/404"
       />
       <div className="text-center max-w-md mx-auto px-4">
@@ -23,11 +23,18 @@ const NotFound = () => {
         <p className="mb-8 text-base md:text-lg text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <Link to="/">
-          <Button size="lg" variant="default">
-            Return to Home
-          </Button>
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to="/">
+            <Button size="lg" variant="default">
+              Return to Home
+            </Button>
+          </Link>
+          <Link to="/contact">
+            <Button size="lg" variant="outline">
+              Contact Us
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
