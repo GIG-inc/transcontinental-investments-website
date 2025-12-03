@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
@@ -51,7 +50,7 @@ const Product = () => {
     }
   ];
 
-  // Breadcrumb Schema
+  // Breadcrumb Schema - FIXED URL
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -71,7 +70,7 @@ const Product = () => {
     ]
   };
 
-  // Service Schema (Main Offering)
+  // Service Schema (Main Offering) - FIXED URL
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -86,22 +85,10 @@ const Product = () => {
     },
     "serviceType": "Precious Metals Trading and Investment",
     "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Kenya"
-      },
-      {
-        "@type": "Country",
-        "name": "Uganda"
-      },
-      {
-        "@type": "Country",
-        "name": "Tanzania"
-      },
-      {
-        "@type": "Country",
-        "name": "Rwanda"
-      }
+      { "@type": "Country", "name": "Kenya" },
+      { "@type": "Country", "name": "Uganda" },
+      { "@type": "Country", "name": "Tanzania" },
+      { "@type": "Country", "name": "Rwanda" }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -130,14 +117,8 @@ const Product = () => {
         "@type": "Service",
         "name": product.title,
         "description": product.description,
-        "provider": {
-          "@type": "Organization",
-          "name": "Transcontinental Investments"
-        },
-        "areaServed": {
-          "@type": "Place",
-          "name": "East Africa"
-        },
+        "provider": { "@type": "Organization", "name": "Transcontinental Investments" },
+        "areaServed": { "@type": "Place", "name": "East Africa" },
         "serviceType": "Precious Metals Trading"
       }
     }))
@@ -149,27 +130,18 @@ const Product = () => {
         title="Products & Trading Platform | Transcontinental Investments - Gold Buying, Selling & Investment"
         description="Explore Transcontinental Investments' precious metals products: gold buying & selling in East Africa, investment platform (2026), mining partnerships, merchant platform, refinery, and innovation hub. Serving East Africa and beyond."
         keywords="Transcontinental Investments products, gold buying services Kenya, gold selling services East Africa, precious metals investment platform, mining partnerships, merchant platform, gold refinery, mining innovation hub"
-        canonical="https://transcontinentalinvestments.com/products"
+        canonical="https://transcontinentalinvestments.com/product"
       />
 
-      {/* Add Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }}
-      />
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }} />
 
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 border-b border-border/50" aria-labelledby="products-heading">
+      {/* Hero Section - Full Screen */}
+      <section className="h-screen flex items-center justify-center px-4 border-b border-border/50" aria-labelledby="products-heading">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 id="products-heading" className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
             Products & Trading Platform
@@ -180,62 +152,68 @@ const Product = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Sticky Sections - Stacking Scroll Effect */}
       <main>
-        <section className="py-16 md:py-20 px-4" aria-label="Products and services list">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {products.map((product, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="p-3 rounded-lg bg-secondary/50" aria-hidden="true">
-                        <product.icon className="h-6 w-6 text-foreground" />
+        <div className="relative">
+          {products.map((product, index) => (
+            <div key={index} className="sticky top-0 h-screen" style={{ zIndex: index }}>
+              <section className="h-screen flex items-center px-4 bg-background border-b border-border/50" aria-label={`${product.title} section`}>
+                <div className="container mx-auto max-w-7xl">
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    {/* Left Side */}
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-lg bg-secondary/50 w-fit" aria-hidden="true">
+                        <product.icon className="h-12 w-12 md:h-16 md:w-16 text-foreground" />
                       </div>
-                      <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
+                      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground">
+                        {product.title}
+                      </h2>
+                      <span className="inline-block text-sm font-medium text-muted-foreground bg-muted px-4 py-2 rounded">
                         {product.status}
                       </span>
                     </div>
-                    <CardTitle className="text-xl">{product.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {product.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-xs text-muted-foreground mb-3">
-                      {product.status === "Active" 
-                        ? "Available now. Contact us for more information." 
-                        : "Join our waitlist for early access and updates."}
-                    </p>
-                    <Link to={product.status === "Active" ? "/contact" : "/waitlist"}>
-                      <Button variant="outline" className="w-full" aria-label={`Learn more about ${product.title}`}>
-                        {product.status === "Active" ? "Contact Us" : "Join Waitlist"}
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
+                    {/* Right Side */}
+                    <div className="space-y-6">
+                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{product.description}</p>
+                      <p className="text-base text-muted-foreground">
+                        {product.status === "Active" 
+                          ? "Available now. Contact us for more information." 
+                          : "Join our waitlist for early access and updates."}
+                      </p>
+                      <Link to={product.status === "Active" ? "/contact" : "/waitlist"}>
+                        <Button variant="default" size="lg" className="w-full md:w-auto" aria-label={`${product.status === "Active" ? "Contact us" : "Join waitlist"} for ${product.title}`}>
+                          {product.status === "Active" ? "Contact Us" : "Join Waitlist"}
+                        </Button>
+                      </Link>  
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
+          ))}
+        </div>
 
-            {/* Additional Context Section */}
-            <div className="max-w-4xl mx-auto space-y-8 mt-16">
-              <article className="prose prose-lg max-w-none">
-                <h2 className="font-display text-3xl font-light text-foreground mb-4">
+        {/* Additional Context Section */}
+        <div className="py-16 md:py-20 px-4 bg-background relative z-50">
+          <div className="container mx-auto max-w-6xl">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <article>
+                <h2 className="font-display text-3xl md:text-4xl font-light text-foreground mb-6">
                   Why Choose Transcontinental Investments?
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                <p className="text-muted-foreground text-lg leading-relaxed mb-4">
                   As East Africa's premier precious metals trading company, we provide end-to-end solutions for individuals, businesses, and institutions looking to buy, sell, or invest in gold, silver, and platinum. Our transparent pricing, ethical sourcing, and extensive network make us the trusted partner for mineral transactions across Kenya, Uganda, Tanzania, and Rwanda.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Learn more <Link to="/about" className="text-primary hover:underline">about our company</Link>, explore our <Link to="/merchant" className="text-primary hover:underline">merchant services</Link>, or <Link to="/contact" className="text-primary hover:underline">contact us</Link> to discuss your precious metals needs.
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Learn more <Link to="/about" className="text-primary hover:underline font-medium">about our company</Link>, explore our <Link to="/merchant" className="text-primary hover:underline font-medium">merchant services</Link>, or <Link to="/contact" className="text-primary hover:underline font-medium">contact us</Link> to discuss your precious metals needs.
                 </p>
               </article>
 
-              <article className="bg-secondary/20 p-8 rounded-lg">
-                <h2 className="font-display text-2xl font-light text-foreground mb-4">
+              <article className="bg-secondary/20 p-8 md:p-10 rounded-lg">
+                <h2 className="font-display text-2xl md:text-3xl font-light text-foreground mb-4">
                   Investment Platform Launch - Early 2026
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                   Our innovative investment platform will democratize access to mineral markets, allowing individual investors to participate in mineral projects with competitive returns. Don't miss early access opportunities.
                 </p>
                 <Link to="/waitlist">
@@ -246,7 +224,7 @@ const Product = () => {
               </article>
             </div>
           </div>
-        </section>
+        </div>
       </main>
 
       {/* SEMANTIC FOOTER WITH PRIMARY PAGES */}

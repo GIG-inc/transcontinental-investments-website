@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Linkedin, ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Building2, Briefcase, Landmark, Globe } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { SEO } from "@/components/SEO";
+import FuzzyText from "@/components/ui/shadcn-io/fuzzy-text";
+import { WritingText } from "@/components/ui/shadcn-io/writing-text/index.tsx";
 
 const Index = () => {
   const products = [{
@@ -118,13 +120,20 @@ const Index = () => {
                 />
               </div>
               
-              {/* IMPROVED H1 WITH BRAND NAME + KEYWORDS */}
-              <h1 
-                id="hero-heading"
-                className="font-display text-2xl md:text-3xl lg:text-4xl font-light tracking-wider text-foreground mb-6"
-              >
-                Transcontinental Investments | Buy & Sell Gold, Precious Metals Trading in East Africa
-              </h1>
+              {/* WRITING TEXT EFFECT IMPLEMENTED HERE */}
+              <div className="min-h-[6rem] md:min-h-[4rem] flex items-center justify-center mb-6">
+                <WritingText
+                  text="Transcontinental Investments | Buy & Sell Gold, Precious Metals Trading in East Africa"
+                  className="font-display text-2xl md:text-3xl lg:text-4xl font-light tracking-wider text-foreground"
+                  inView={true}
+                  transition={{
+                    type: "spring",
+                    bounce: 0,
+                    duration: 3,
+                    delay: 0.2
+                  }}
+                />
+              </div>
               
               <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
                 East Africa's leading precious metals trading platform. Buy gold, sell gold, invest in silver, platinum & minerals. Ethical sourcing, transparent pricing. Serving Kenya, Uganda, Tanzania & Rwanda.
@@ -199,7 +208,11 @@ const Index = () => {
               </p>
               <div className="mt-8">
                 <Link to="/about">
-                  <Button variant="outline" size="lg">
+                  <Button 
+                    size="lg" 
+                    className="font-medium" 
+                    aria-label="Learn more about Transcontinental Investments"
+                  >
                     Learn More About Us
                   </Button>
                 </Link>
@@ -325,15 +338,23 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - FUZZY TEXT EFFECT IMPLEMENTED HERE */}
         <section className="py-16 md:py-24 px-4 bg-primary text-primary-foreground" aria-labelledby="cta-heading">
           <div className="container mx-auto max-w-3xl text-center">
-            <h2 
-              id="cta-heading"
-              className="font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6"
-            >
-              Join Us in Transforming Mining
-            </h2>
+            
+            <div className="relative w-full flex items-center justify-center mb-6">
+              <FuzzyText
+                fontSize="clamp(2.5rem, 5vw, 4rem)"
+                fontWeight={900}
+                color="#ffffff"
+                enableHover={true}
+                baseIntensity={0.18}
+                hoverIntensity={0.5}
+              >
+                Join Us in Transforming Mining
+              </FuzzyText>
+            </div>
+
             <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Be part of the future of precious metals investment in East Africa. Join our waitlist today.
             </p>
