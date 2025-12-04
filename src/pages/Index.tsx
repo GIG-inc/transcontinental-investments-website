@@ -2,8 +2,9 @@ import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Twitter, Linkedin, ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Building2, Briefcase, Landmark, Globe } from "lucide-react";
+import { ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Building2, Briefcase, Landmark, Globe, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import FuzzyText from "@/components/ui/shadcn-io/fuzzy-text";
 import { WritingText } from "@/components/ui/shadcn-io/writing-text/index.tsx";
@@ -13,40 +14,40 @@ const Index = () => {
     icon: ShoppingCart,
     title: "Gold Buying",
     description: "Purchase gold from miners and sellers across East Africa with transparent pricing",
-    link: "/product"
+    link: "/products/gold-buying"
   }, {
     icon: Store,
     title: "Gold Selling",
     description: "Sell premium gold to investors and international buyers",
-    link: "/product"
+    link: "/products/gold-selling"
   }, {
     icon: TrendingUp,
     title: "Investment Platform",
     description: "Invest in gold, silver, platinum and rare minerals",
-    link: "/product",
+    link: "/products/investment-platform",
     badge: "2026"
   }, {
     icon: Handshake,
     title: "Mining Partnerships",
     description: "Partnership opportunities with mining operations",
-    link: "/product"
+    link: "/products/mining-partnerships"
   }, {
     icon: Users,
     title: "Merchant Platform",
     description: "Digital marketplace for precious metals trading",
-    link: "/merchant",
+    link: "/products/merchant-platform",
     badge: "2026"
   }, {
     icon: Factory,
     title: "Refinery",
     description: "State-of-the-art gold and precious metals refining facility",
-    link: "/product",
+    link: "/products/refinery",
     badge: "2027"
   }, {
     icon: Lightbulb,
     title: "Innovation Hub",
     description: "Research and development in mining technology",
-    link: "/product"
+    link: "/products/innovation-hub"
   }];
 
   const audiences = [{
@@ -265,7 +266,7 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <Link to="/product">
+              <Link to="/products">
                 <Button size="lg" variant="default">
                   View All Products
                 </Button>
@@ -367,122 +368,7 @@ const Index = () => {
         </section>
       </main>
 
-      {/* SEMANTIC FOOTER WITH PRIMARY PAGES (CRITICAL FOR SITELINKS) */}
-      <footer className="py-12 px-4 border-t border-border bg-secondary/10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Company Info */}
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Transcontinental Investments</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                East Africa's leading precious metals trading and mineral investment platform.
-              </p>
-            </div>
-
-            {/* Quick Links - PRIMARY PAGES */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
-              <nav role="navigation" aria-label="Footer Navigation">
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      About Transcontinental
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Products & Trading
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/merchants" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Merchant Services
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Resources</h4>
-              <nav role="navigation" aria-label="Resources Navigation">
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Blog & Market Insights
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Contact Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/waitlist" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Join Waitlist
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Connect With Us</h4>
-              <div className="flex gap-3">
-                <a 
-                  href="https://www.instagram.com/transcontinental_investments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Instagram"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Instagram size={18} />
-                </a>
-                <a 
-                  href="https://www.facebook.com/transcontinentalinvestments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Facebook"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Facebook size={18} />
-                </a>
-                <a 
-                  href="https://x.com/T_C_Investments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="X (Twitter)"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Twitter size={18} />
-                </a>
-                <a 
-                  href="https://linkedin.com/company/transcontinentalinvestments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="LinkedIn"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Linkedin size={18} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-border text-center">
-            <p className="text-xs md:text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

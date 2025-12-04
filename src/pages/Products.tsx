@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { ShoppingCart, Store, TrendingUp, Handshake, Users, Factory, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
 const Product = () => {
@@ -10,43 +11,57 @@ const Product = () => {
       icon: ShoppingCart,
       title: "Gold Buying",
       description: "We purchase gold from individuals, businesses, companies, and cooperations. Transparent pricing and secure transactions.",
-      status: "Active"
+      status: "Active",
+      link: "/products/gold-buying",
+      gradient: "from-yellow-500/10 to-amber-500/5"
     },
     {
       icon: Store,
       title: "Gold Selling",
       description: "We sell premium gold to individuals, businesses, cooperations, and governments. Quality guaranteed.",
-      status: "Active"
+      status: "Active",
+      link: "/products/gold-selling",
+      gradient: "from-amber-500/10 to-orange-500/5"
     },
     {
       icon: TrendingUp,
       title: "Investment Platform",
       description: "A comprehensive platform for investing in precious metals and mineral markets. Coming early 2026.",
-      status: "Coming Early 2026"
+      status: "Coming Early 2026",
+      link: "/products/investment-platform",
+      gradient: "from-emerald-500/10 to-teal-500/5"
     },
     {
       icon: Handshake,
       title: "Mining Partnerships",
       description: "We partner with miners to help them obtain licenses and support their operations.",
-      status: "Active"
+      status: "Active",
+      link: "/products/mining-partnerships",
+      gradient: "from-blue-500/10 to-indigo-500/5"
     },
     {
       icon: Users,
       title: "Merchant Platform",
       description: "A dedicated platform for buyers and sellers to trade gold. Join our merchant network. Rolling out early 2026.",
-      status: "Coming Early 2026"
+      status: "Coming Early 2026",
+      link: "/products/merchant-platform",
+      gradient: "from-violet-500/10 to-purple-500/5"
     },
     {
       icon: Factory,
       title: "Refinery",
       description: "Our own refinery facility. Development starting late 2026, operations beginning early 2027.",
-      status: "Development Late 2026"
+      status: "Development Late 2026",
+      link: "/products/refinery",
+      gradient: "from-slate-500/10 to-zinc-500/5"
     },
     {
       icon: Lightbulb,
       title: "Innovation Hub",
       description: "Innovation center for mining technology and robotics. Join us in transforming the mining sector.",
-      status: "Active"
+      status: "Active",
+      link: "/products/innovation-hub",
+      gradient: "from-rose-500/10 to-pink-500/5"
     }
   ];
 
@@ -157,34 +172,48 @@ const Product = () => {
         <div className="relative">
           {products.map((product, index) => (
             <div key={index} className="sticky top-0 h-screen" style={{ zIndex: index }}>
-              <section className="h-screen flex items-center px-4 bg-background border-b border-border/50" aria-label={`${product.title} section`}>
+              <section 
+                className={`h-screen flex items-center px-4 bg-gradient-to-br ${product.gradient} border-b border-border/30`} 
+                aria-label={`${product.title} section`}
+              >
                 <div className="container mx-auto max-w-7xl">
-                  <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                     {/* Left Side */}
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-lg bg-secondary/50 w-fit" aria-hidden="true">
+                    <div className="space-y-6">
+                      <div className="p-4 md:p-5 rounded-2xl bg-background/80 backdrop-blur-sm w-fit shadow-lg border border-border/50" aria-hidden="true">
                         <product.icon className="h-12 w-12 md:h-16 md:w-16 text-foreground" />
                       </div>
-                      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground">
+                      <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-light tracking-wide text-foreground">
                         {product.title}
                       </h2>
-                      <span className="inline-block text-sm font-medium text-muted-foreground bg-muted px-4 py-2 rounded">
+                      <span className={`inline-block text-sm font-semibold px-4 py-2 rounded-full ${
+                        product.status === "Active" 
+                          ? "bg-emerald-500/20 text-emerald-700 dark:text-emerald-400" 
+                          : "bg-muted text-muted-foreground"
+                      }`}>
                         {product.status}
                       </span>
                     </div>
                     {/* Right Side */}
-                    <div className="space-y-6">
-                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{product.description}</p>
-                      <p className="text-base text-muted-foreground">
+                    <div className="space-y-8 md:pl-8">
+                      <p className="text-lg md:text-2xl text-muted-foreground leading-relaxed">{product.description}</p>
+                      <p className="text-base text-muted-foreground/80">
                         {product.status === "Active" 
                           ? "Available now. Contact us for more information." 
                           : "Join our waitlist for early access and updates."}
                       </p>
-                      <Link to={product.status === "Active" ? "/contact" : "/waitlist"}>
-                        <Button variant="default" size="lg" className="w-full md:w-auto" aria-label={`${product.status === "Active" ? "Contact us" : "Join waitlist"} for ${product.title}`}>
-                          {product.status === "Active" ? "Contact Us" : "Join Waitlist"}
-                        </Button>
-                      </Link>  
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Link to={product.link}>
+                          <Button variant="outline" size="lg" className="w-full sm:w-auto" aria-label={`Learn more about ${product.title}`}>
+                            Learn More
+                          </Button>
+                        </Link>
+                        <Link to={product.status === "Active" ? "/contact" : "/waitlist"}>
+                          <Button variant="default" size="lg" className="w-full sm:w-auto" aria-label={`${product.status === "Active" ? "Contact us" : "Join waitlist"} for ${product.title}`}>
+                            {product.status === "Active" ? "Contact Us" : "Join Waitlist"}
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -205,7 +234,7 @@ const Product = () => {
                   As East Africa's premier precious metals trading company, we provide end-to-end solutions for individuals, businesses, and institutions looking to buy, sell, or invest in gold, silver, and platinum. Our transparent pricing, ethical sourcing, and extensive network make us the trusted partner for mineral transactions across Kenya, Uganda, Tanzania, and Rwanda.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Learn more <Link to="/about" className="text-primary hover:underline font-medium">about our company</Link>, explore our <Link to="/merchant" className="text-primary hover:underline font-medium">merchant services</Link>, or <Link to="/contact" className="text-primary hover:underline font-medium">contact us</Link> to discuss your precious metals needs.
+                  Learn more <Link to="/about" className="text-primary hover:underline font-medium">about our company</Link>, explore our <Link to="/merchants" className="text-primary hover:underline font-medium">merchant services</Link>, or <Link to="/contact" className="text-primary hover:underline font-medium">contact us</Link> to discuss your precious metals needs.
                 </p>
               </article>
 
@@ -227,122 +256,7 @@ const Product = () => {
         </div>
       </main>
 
-      {/* SEMANTIC FOOTER WITH PRIMARY PAGES */}
-      <footer className="py-12 px-4 border-t border-border bg-secondary/10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Company Info */}
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Transcontinental Investments</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                East Africa's leading precious metals trading and mineral investment platform.
-              </p>
-            </div>
-
-            {/* Quick Links - PRIMARY PAGES */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
-              <nav role="navigation" aria-label="Footer Navigation">
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      About Transcontinental
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Products & Trading
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/merchants" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Merchant Services
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Resources</h4>
-              <nav role="navigation" aria-label="Resources Navigation">
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Blog & Market Insights
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Contact Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/waitlist" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Join Waitlist
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Connect With Us</h4>
-              <div className="flex gap-3">
-                <a 
-                  href="https://www.instagram.com/transcontinental_investments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Instagram"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Instagram size={18} />
-                </a>
-                <a 
-                  href="https://www.facebook.com/transcontinentalinvestments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Facebook"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Facebook size={18} />
-                </a>
-                <a 
-                  href="https://x.com/T_C_Investments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="X (Twitter)"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Twitter size={18} />
-                </a>
-                <a 
-                  href="https://linkedin.com/company/transcontinentalinvestments" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="LinkedIn"
-                  className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-                >
-                  <Linkedin size={18} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-border text-center">
-            <p className="text-xs md:text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

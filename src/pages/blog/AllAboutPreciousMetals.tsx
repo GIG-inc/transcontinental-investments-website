@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, Shield, Globe, Zap, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
 const AllAboutPreciousMetals = () => {
@@ -419,14 +420,7 @@ const AllAboutPreciousMetals = () => {
         </div>
       </article>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 md:py-12">
-        <div className="container mx-auto px-4">
-          <p className="text-sm text-center text-muted-foreground">
-            © {new Date().getFullYear()} Transcontinental Investments. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

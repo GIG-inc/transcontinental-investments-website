@@ -2,79 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://transcontinentalinvestments.com/</loc>
+    <loc>https://transcontinentalinvestments.com/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/about</loc>
+    <loc>https://transcontinentalinvestments.com/about</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/waitlist</loc>
+    <loc>https://transcontinentalinvestments.com/waitlist</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/blog</loc>
+    <loc>https://transcontinentalinvestments.com/blog</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/blog/all-about-precious-metals</loc>
+    <loc>https://transcontinentalinvestments.com/blog/all-about-precious-metals</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products</loc>
+    <loc>https://transcontinentalinvestments.com/products</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/gold-buying</loc>
+    <loc>https://transcontinentalinvestments.com/products/gold-buying</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/gold-selling</loc>
+    <loc>https://transcontinentalinvestments.com/products/gold-selling</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/investment-platform</loc>
+    <loc>https://transcontinentalinvestments.com/products/investment-platform</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/mining-partnerships</loc>
+    <loc>https://transcontinentalinvestments.com/products/mining-partnerships</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/merchant-platform</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://transcontinentalinvestments.com/products/merchant-platform</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/refinery</loc>
+    <loc>https://transcontinentalinvestments.com/products/refinery</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/products/innovation-hub</loc>
+    <loc>https://transcontinentalinvestments.com/products/innovation-hub</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/merchants</loc>
+    <loc>https://transcontinentalinvestments.com/merchants</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>http://transcontinentalinvestments.com/contact</loc>
+    <loc>https://transcontinentalinvestments.com/contact</loc>
     <priority>0.9</priority>
   </url>
 
