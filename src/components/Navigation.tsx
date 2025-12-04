@@ -100,7 +100,7 @@ export const Navigation = () => {
             <motion.div
               key="dropdown"
               id="mobile-menu"
-              className="absolute top-full left-0 right-0 bg-white border-b border-border/50 shadow-lg md:hidden z-50"
+              className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border/50 shadow-lg md:hidden z-50"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
