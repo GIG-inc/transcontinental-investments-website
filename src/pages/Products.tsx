@@ -13,7 +13,7 @@ const Product = () => {
       description: "We purchase gold from individuals, businesses, companies, and cooperations. Transparent pricing and secure transactions.",
       status: "Active",
       link: "/products/gold-buying",
-      gradient: "from-yellow-500/10 to-amber-500/5"
+      gradient: "from-white to-white"
     },
     {
       icon: Store,
@@ -21,7 +21,7 @@ const Product = () => {
       description: "We sell premium gold to individuals, businesses, cooperations, and governments. Quality guaranteed.",
       status: "Active",
       link: "/products/gold-selling",
-      gradient: "from-amber-500/10 to-orange-500/5"
+      gradient: "from-white to-white"
     },
     {
       icon: TrendingUp,
@@ -29,7 +29,7 @@ const Product = () => {
       description: "A comprehensive platform for investing in precious metals and mineral markets. Coming early 2026.",
       status: "Coming Early 2026",
       link: "/products/investment-platform",
-      gradient: "from-emerald-500/10 to-teal-500/5"
+      gradient: "from-white to-white"
     },
     {
       icon: Handshake,
@@ -37,7 +37,7 @@ const Product = () => {
       description: "We partner with miners to help them obtain licenses and support their operations.",
       status: "Active",
       link: "/products/mining-partnerships",
-      gradient: "from-blue-500/10 to-indigo-500/5"
+      gradient: "from-white to-white"
     },
     {
       icon: Users,
@@ -45,7 +45,7 @@ const Product = () => {
       description: "A dedicated platform for buyers and sellers to trade gold. Join our merchant network. Rolling out early 2026.",
       status: "Coming Early 2026",
       link: "/products/merchant-platform",
-      gradient: "from-violet-500/10 to-purple-500/5"
+      gradient: "from-white to-white"
     },
     {
       icon: Factory,
@@ -53,7 +53,7 @@ const Product = () => {
       description: "Our own refinery facility. Development starting late 2026, operations beginning early 2027.",
       status: "Development Late 2026",
       link: "/products/refinery",
-      gradient: "from-slate-500/10 to-zinc-500/5"
+      gradient: "from-white to-white"
     },
     {
       icon: Lightbulb,
@@ -61,7 +61,7 @@ const Product = () => {
       description: "Innovation center for mining technology and robotics. Join us in transforming the mining sector.",
       status: "Active",
       link: "/products/innovation-hub",
-      gradient: "from-rose-500/10 to-pink-500/5"
+      gradient: "from-white to-white"
     }
   ];
 
