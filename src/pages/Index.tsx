@@ -341,11 +341,12 @@ const Index = () => {
 
         {/* CTA Section - FUZZY TEXT EFFECT IMPLEMENTED HERE */}
         <section className="py-16 md:py-24 px-4 bg-primary text-primary-foreground" aria-labelledby="cta-heading">
-          <div className="container mx-auto max-w-3xl text-center">
-            
-            <div className="relative w-full flex items-center justify-center mb-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          
+          <div className="relative w-full flex items-center justify-center mb-6 px-2">
+            <div className="w-full max-w-full overflow-hidden">
               <FuzzyText
-                fontSize="clamp(2.5rem, 5vw, 4rem)"
+                fontSize="clamp(1.5rem, 8vw, 4rem)"
                 fontWeight={900}
                 color="#ffffff"
                 enableHover={true}
@@ -355,17 +356,18 @@ const Index = () => {
                 Join Us in Transforming Mining
               </FuzzyText>
             </div>
-
-            <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Be part of the future of precious metals investment in East Africa. Join our waitlist today.
-            </p>
-            <Link to="/waitlist">
-              <Button size="lg" variant="secondary" className="font-medium">
-                Join the Waitlist
-              </Button>
-            </Link>
           </div>
-        </section>
+
+          <p className="text-base md:text-lg lg:text-xl mb-8 opacity-90 max-w-2xl mx-auto px-4">
+            Be part of the future of precious metals investment in East Africa. Join our waitlist today.
+          </p>
+          <Link to="/waitlist">
+            <Button size="lg" variant="secondary" className="font-medium">
+              Join the Waitlist
+            </Button>
+          </Link>
+        </div>
+      </section>
       </main>
 
       <Footer />
