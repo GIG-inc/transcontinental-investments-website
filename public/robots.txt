@@ -2,30 +2,57 @@
 # Website: https://transcontinentalinvestments.com
 # Precious metals trading & mineral investment platform
 
+# Allow all crawlers, search engines, and AI assistants
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
-Disallow: /.well-known/
-Allow: /.well-known/security.txt
 
-# Sitemaps
-Sitemap: https://transcontinentalinvestments.com/sitemap.xml
-
-# Crawl-delay for specific bots
+# Search Engine Bots
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 1
 
-# Social media bots
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# AI Assistant Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Social Media Bots
 User-agent: Twitterbot
 Allow: /
 
@@ -38,9 +65,23 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Bad bots
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# SEO & Research Bots
 User-agent: AhrefsBot
+Allow: /
 Crawl-delay: 10
 
 User-agent: SemrushBot
+Allow: /
 Crawl-delay: 10
+
+# Sitemaps
+Sitemap: https://transcontinentalinvestments.com/sitemap.xml
